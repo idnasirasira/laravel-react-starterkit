@@ -16,12 +16,7 @@ const breadcrumbs: BreadcrumbItem[] = [
     },
 ];
 
-async function getData(): Promise<User[]> {
-    const response = await fetch('/api/users');
-    return response.json();
-}
-
-export default function Page({users}: {users: User[]}) {
+export default function Page({ users }: { users: User[] }) {
     const [data, setData] = useState<User[]>(users);
 
     useEffect(() => {
